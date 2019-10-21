@@ -1,8 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## To run project
 
-In the project directory, you can run:
+**Install create-react-app:**
+npm install -g create-react-app
+
+**Install SASS compiler**
+npm install node-sass
+
+create-react-app folder
+
+cd folder/
 
 ### `npm start`
 

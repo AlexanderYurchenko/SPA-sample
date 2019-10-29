@@ -52,3 +52,83 @@ body {
   margin-left: auto;
   padding: 0 15px;
 }
+
+.c-h1,
+.c-h2,
+.c-h3,
+.c-h4,
+.c-h5,
+.c-h6 {
+  display: block;
+  margin: 0 0 .8em;
+  font-weight: $font-main-medium;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-h1 {
+    font-size: 22px;
+
+    @include respond-from(sm) {
+        font-size: 26px;
+    }
+
+    @include respond-from(md) {
+        font-size: 28px;
+    }
+}
+
+.c-h2 {
+  font-size: 20px;
+
+  @include respond-from(sm) {
+      font-size: 22px;
+  }
+  
+  @include respond-from(md) {
+      font-size: 24px;
+  }
+}
+
+.c-h3 {
+  font-size: 18px;
+
+  @include respond-from(sm) {
+      font-size: 20px;
+  }
+  
+  @include respond-from(md) {
+      font-size: 20px;
+  }
+}
+
+.c-h4 {
+  font-size: 16px;
+
+  @include respond-from(sm) {
+      font-size: 16px;
+  }
+  
+  @include respond-from(md) {
+      font-size: 18px;
+  }
+}
+
+a {
+  color: $link-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    color: $link-text;
+    text-decoration: underline;
+  }
+}

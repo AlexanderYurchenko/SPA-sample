@@ -4,8 +4,16 @@ import "./posts.scss"
 
 class Posts extends Component {
   state = {
-    posts: []
+    posts: [],
+    refresh: false
   };
+
+  componentWillReceiveProps(props) {
+    const { refresh } = this.props;
+    if (props.refresh !== refresh) {
+      this.setState({ posts: props.posts })
+    }
+  }
 
   componentDidMount() {
     this.setState({ posts: this.props.posts })
@@ -14,7 +22,7 @@ class Posts extends Component {
   render() {
     return (
       <div className="c-posts">
-        <h2 className="c-posts__title">Posts List</h2>
+        <h2 className="c-posts__title c-h2">Posts List</h2>
         <ul className="c-posts__list">
           {this.state.posts.map(post => (
             <Post

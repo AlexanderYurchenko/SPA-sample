@@ -6,6 +6,6 @@
   }
 
   &__list {
-    
+    @extend %ul-reset-style;
   }
 }

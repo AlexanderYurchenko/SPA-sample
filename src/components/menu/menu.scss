@@ -2,7 +2,7 @@
 
 .c-menu {
   &__list {
-
+    @extend %ul-reset-style;
   }
 
   &__item {

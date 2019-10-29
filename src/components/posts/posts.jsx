@@ -8,11 +8,22 @@ class Posts extends Component {
     refresh: false
   };
 
-  componentWillReceiveProps(props) {
-    const { refresh } = this.props;
-    if (props.refresh !== refresh) {
-      this.setState({ posts: props.posts })
+  // UNSAFE_componentWillReceiveProps(props) {
+  //   const { refresh } = this.props;
+  //   if (props.refresh !== refresh) {
+  //     this.setState({ posts: props.posts })
+  //   }
+  // }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.refresh !== state.refresh) {
+      // this.setState({ posts: props.posts })
+      return ({
+        posts: props.posts
+      })
     }
+
+    return null;
   }
 
   componentDidMount() {

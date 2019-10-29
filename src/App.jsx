@@ -6,6 +6,7 @@ import Posts from "./components/posts/posts";
 import PostSingle from "./components/post-single/post-single";
 import Contact from "./components/contact/contact";
 import NotFound from "./components/not-found/not-found";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class App extends Component {
             </Switch>
           </div>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

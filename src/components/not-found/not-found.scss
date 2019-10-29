@@ -1,0 +1,35 @@
+@import '../../common.scss';
+
+.c-not-found {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:before {
+    content: '404';
+    position: absolute;
+    font-size: 100px;
+    font-weight: $font-main-bold;
+    color: $link-text;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .3;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__btn-box {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__btn {
+
+  }
+}

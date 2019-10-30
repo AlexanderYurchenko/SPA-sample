@@ -38,18 +38,20 @@ class App extends Component {
         <div className="w-inner">
           <Menu />
           <div className="w-center">
-            <Switch>
-              <Route exact path="/" children={(props) => (
-                props.match
-                  ? <Posts {...props} posts={posts} refresh={refreshPostsList} /> : ''
-              )}/>
-              <Route path="/post/:postId" children={(props) => (
-                props.match
-                  ? <PostSingle {...props} refresh={refreshPost}/> : ''
-              )}/>
-              <Route path="/contact" component={Contact} />
-              <Route component={NotFound} />
-            </Switch>
+            <div className="w-content">
+              <Switch>
+                <Route exact path="/" children={(props) => (
+                  props.match
+                    ? <Posts {...props} posts={posts} refresh={refreshPostsList} /> : ''
+                )}/>
+                <Route path="/post/:postId" children={(props) => (
+                  props.match
+                    ? <PostSingle {...props} refresh={refreshPost}/> : ''
+                )}/>
+                <Route path="/contact" component={Contact} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
           </div>
         </div>
         <Footer />

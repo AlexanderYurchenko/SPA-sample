@@ -1,15 +1,45 @@
 @import '../../common.scss';
 
 .c-post {
-  &__title-box {
+  margin: 0 auto 8px;
+  padding: 18px 15px;
+  max-width: 360px;
+  position: relative;
+  background: #f2f4f7;
+  transition: all .3s;
 
+  &:hover,
+  &:focus-within {
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, .28);
   }
 
   &__title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 126%;
+    display: block;
+    text-decoration: none;
+    color: #09174c;
+    transition: all .3s;
 
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+      color: #09174c;
+    }
   }
 
   &__info {
-    
+    margin: 14px 0 0;
+    font-size: 16px;
+    line-height: 152%;
+  }
+
+  &__date {
+    margin: 17px 0 0;
+    font-size: 14px;
+    font-weight: $font-main-medium;
   }
 }

@@ -3,42 +3,50 @@
         {
             "id": 1,
             "title": "8.2M Could Have Lower Mortgage Payments",
-            "info": "The average borrower stands to save about $266 per month on their mortgage by refinancing."
+            "info": "The average borrower stands to save about $266 per month on their mortgage by refinancing.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 2,
             "title": "4 Maintenance Chores Your Clients Shouldn’t Delay",
-            "info": "Homeowners who fail to perform these upkeep tasks in a timely manner may face hefty repair bills in the future."
+            "info": "Homeowners who fail to perform these upkeep tasks in a timely manner may face hefty repair bills in the future.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 3,
             "title": "2 Billion Records Exposed in Smart-Home Device Breach",
-            "info": "Just how secure is that “smart” security camera or door lock? That is being called into question."
+            "info": "Just how secure is that “smart” security camera or door lock? That is being called into question.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 4,
             "title": "Mystery Solved: The Best Way to Vacuum a Room",
-            "info": "A quick pass with a vacuum cleaner is sometimes fine, but go deep with these techniques for the best cleaning."
+            "info": "A quick pass with a vacuum cleaner is sometimes fine, but go deep with these techniques for the best cleaning.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 5,
             "title": "Suburbs Are Cool Again, and Younger Generations Swoop In",
-            "info": "Many U.S. suburbs are seeing their populations grow as millennials move out of the city and head to the ’burbs."
+            "info": "Many U.S. suburbs are seeing their populations grow as millennials move out of the city and head to the ’burbs.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 6,
             "title": "This Housing Trend May Radically Change Neighborhoods",
-            "info": "Oregon is the latest to loosen single-family zoning laws to pave the way for more homebuilding. Critics argue these laws are destroying neighborhoods."
+            "info": "Oregon is the latest to loosen single-family zoning laws to pave the way for more homebuilding. Critics argue these laws are destroying neighborhoods.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 7,
             "title": "Builders Will Build It, If You Rent It",
-            "info": "The build-to-rent market is exploding in growth."
+            "info": "The build-to-rent market is exploding in growth.",
+            "date": "15 Oct, 2018"
         },
         {
             "id": 8,
             "title": "Statewide PSA Warns Real Estate Scams Put You at Risk",
-            "info": "The growing threat of wire fraud in housing transactions is prompting the Utah Division of Real Estate to warn the public."
+            "info": "The growing threat of wire fraud in housing transactions is prompting the Utah Division of Real Estate to warn the public.",
+            "date": "15 Oct, 2018"
         }
     ]
 }

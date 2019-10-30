@@ -3,44 +3,18 @@
 .c-post-single {
     &__title {
         position: relative;
-        display: block;
-        font-size: 22px;
-        font-weight: $font-main-medium;
-        line-height: 125%;
-        padding-left: 15px;
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 0;
-            bottom: 0;
-            width: 4px;
-            background: $decor-fill;
-            -webkit-transition: all .3s;
-            transition: all .3s;
-        }
+        text-transform: uppercase;
     }
 
-    &__head {
+    &__footer {
         display: flex;
         justify-content: space-between;
         margin: 10px 0 0;
     }
 
     &__author {
-        display: inline-block;
-        vertical-align: baseline;
         font-size: 18px;
         color: #5c83f0;
-        text-decoration: none;
-
-        &:hover,
-        &:active,
-        &:focus {
-            outline: none;
-            text-decoration: underline;
-        }
     }
 
     &__date {
@@ -49,15 +23,11 @@
         font-size: 14px;
         white-space: nowrap;
         text-align: right;
-        margin: 4px 0 0;
+        margin: 1px 0 0 15px;
     }
 
     &__text {
         margin: 16px 0 0;
         line-height: 139%;
-    }
-
-    &__tags {
-        margin: 10px 0 0;
     }
 }

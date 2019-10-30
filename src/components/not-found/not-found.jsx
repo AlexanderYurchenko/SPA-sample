@@ -7,7 +7,7 @@ const NotFound = () => {
     <div className="c-not-found">
       <div className="c-not-found__title">Oops! Nothing found here!</div>
       <div className="c-not-found__btn-box">
-        <Link to="/" className="c-not-found__btn">To the home page</Link>
+        <Link to="/" className="c-not-found__btn c-btn">To the home page</Link>
       </div>
     </div>
   );

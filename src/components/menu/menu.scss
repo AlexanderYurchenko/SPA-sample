@@ -1,11 +1,222 @@
 @import '../../common.scss';
 
 .c-menu {
+  height: 59px;
+
+  &__fix {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #12131b;
+    height: 79px;
+    box-shadow: 1px 1px 7px rgba(#000, .43);
+    color: #fff;
+    transition: all .5s;
+  }
+
+  &__center {
+    z-index: 3;
+    transition: all .3s;
+  }
+
+  &__btn {
+    display: none;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    z-index: 10;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all .3s;
+  }
+
+  &__line {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 5px;
+    margin: 5px auto;
+    background-color: #d7aa0e;
+    border-radius: 3px;
+
+    &.c-menu__line-1 {
+      transition: all .3s .5s;
+    }
+
+    &.c-menu__line-2 {
+      transition: all .3s .3s;
+    }
+
+    &.c-menu__line-3 {
+      transition: all .3s .1s;
+    }
+  }
+
   &__list {
     @extend %ul-reset-style;
   }
 
   &__item {
-    
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding-right: 10px;
+  }
+
+  &__link {
+    display: block;
+    height: 30px;
+    line-height: 33px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 7px;
+    position: relative;
+    color: #fff;
+    transform: perspective(1px) translateZ(0);
+    transition: all .3s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      display: block;
+      top: 0;
+      left: -4px;
+      right: 100%;
+      bottom: 0;
+      border-radius: 2px;
+      background: #263cc2;
+      transition: all .3s;
+    }
+
+    &:hover {
+      outline: none;
+      text-decoration: none;
+      color: #fff;
+
+      &:before {
+        width: auto;
+        right: 0;
+        left: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include respond-from(to-sm) {
+    &__fix {
+      height: 59px;
+    }
+
+    &__center {
+      &.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(11,13,24,.9);
+      }
+    }
+
+    &__btn {
+      display: block;
+    }
+
+    &__line-1 {
+      .open & {
+        width: 33px;
+        height: 33px;
+        margin: 0 auto;
+        transition: all .3s .1s;  
+        background-color: #d7aa0e;   
+      }
+    }
+
+    &__line-2 {
+      .open & {
+        background-color: #1d233c;
+        transform: translateY(-24px) rotateZ(45deg);
+        transition: all .3s .3s;
+      }
+    }
+
+    &__line-3 {
+      .open & {
+        background-color: #1d233c;
+        transform: translateY(-34px) rotateZ(-45deg);
+        transition: all .3s .5s;
+      }
+    }
+
+    &__list {
+      display: none;
+      position: absolute;
+      top: 59px;
+      left: 0;
+      right: 0;
+      background-color: #0b0d18;
+      z-index: 5;
+      padding: 27px 25px 33px;
+      border-top: 2px solid #2335a2;
+      box-shadow: none;
+      overflow: auto;
+      max-height: 88%;
+
+      .open & {
+        display: block;
+      }
+    }
+
+    &__item {
+      min-width: unset;
+      display: block;
+      position: relative;
+      margin: 0 0 3px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 19px 3px;
+      margin: 0;
+      height: auto;
+      text-align: left;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #a4aff4;
+      transition: all .3s;
+
+      &:before {
+        left: 0;
+        bottom: 5px;
+        background: #2336a3;
+      }
+
+      &:hover {
+        color: #fff;
+
+        &:before {
+          right: 0;
+        }
+      }
+    }
   }
 }

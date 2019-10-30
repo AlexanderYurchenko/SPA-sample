@@ -26,10 +26,10 @@ class PostSingle extends Component {
     return (
       <div className="c-post-single">
         <div className="c-post-single__title-box">
-          <div className="c-post-single__title">{title}</div>
+          <div className="c-post-single__title c-h1">{title}</div>
         </div>
         <div className="c-post-single__text">{text}</div>
-        <div className="c-post-single__head">
+        <div className="c-post-single__footer">
           <div className="c-post-single__author">{author}</div>
           <span className="c-post-single__date">{date}</span>
         </div>

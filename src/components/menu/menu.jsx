@@ -25,6 +25,15 @@ class Menu extends Component {
     });
   }
 
+  closeMenu = () => {
+    const menuWrap = document.getElementsByClassName("js-menu-wrap")[0];
+    menuWrap.classList.remove("open");
+
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() { 
     return (  
       <div className="c-menu">
@@ -37,10 +46,10 @@ class Menu extends Component {
             </button>
             <ul className="c-menu__list">
               <li className="c-menu__item">
-                <NavLink className="c-menu__link" exact to="/" activeClassName="active" onClick={this.toggleMenu}>Posts</NavLink>
+                <NavLink className="c-menu__link" exact to="/" activeClassName="active" onClick={this.closeMenu}>Posts</NavLink>
               </li>
               <li className="c-menu__item">
-                <NavLink className="c-menu__link" to="/contact" activeClassName="active" onClick={this.toggleMenu}>Contact</NavLink>
+                <NavLink className="c-menu__link" to="/contact" activeClassName="active" onClick={this.closeMenu}>Contact</NavLink>
               </li>
             </ul>
           </div>

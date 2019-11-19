@@ -9,7 +9,6 @@ class Menu extends Component {
 
   toggleMenu = (event) => {
     event.preventDefault();
-    console.log(this.state.isOpen);
     const body = document.body;
     const menuWrap = document.getElementsByClassName("js-menu-wrap")[0];
 
@@ -38,10 +37,10 @@ class Menu extends Component {
             </button>
             <ul className="c-menu__list">
               <li className="c-menu__item">
-                <NavLink className="c-menu__link" exact to="/" activeClassName="active">Posts</NavLink>
+                <NavLink className="c-menu__link" exact to="/" activeClassName="active" onClick={this.toggleMenu}>Posts</NavLink>
               </li>
               <li className="c-menu__item">
-                <NavLink className="c-menu__link" to="/contact" activeClassName="active">Contact</NavLink>
+                <NavLink className="c-menu__link" to="/contact" activeClassName="active" onClick={this.toggleMenu}>Contact</NavLink>
               </li>
             </ul>
           </div>

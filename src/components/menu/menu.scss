@@ -1,6 +1,8 @@
 @import '../../common.scss';
 
 .c-menu {
+  position: relative;
+  z-index: 5;
   height: 79px;
   transition: all .3s;
 

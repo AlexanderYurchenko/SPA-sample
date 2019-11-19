@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './menu.scss';
 
 class Menu extends Component {
@@ -38,10 +38,10 @@ class Menu extends Component {
             </button>
             <ul className="c-menu__list">
               <li className="c-menu__item">
-                <Link className="c-menu__link" to="/">Posts</Link>
+                <NavLink className="c-menu__link" exact to="/" activeClassName="active">Posts</NavLink>
               </li>
               <li className="c-menu__item">
-                <Link className="c-menu__link" to="/contact">Contact</Link>
+                <NavLink className="c-menu__link" to="/contact" activeClassName="active">Contact</NavLink>
               </li>
             </ul>
           </div>

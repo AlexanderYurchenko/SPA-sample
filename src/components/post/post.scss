@@ -42,4 +42,9 @@
     font-size: 14px;
     font-weight: $font-main-medium;
   }
+
+  @include respond-from(sm) {
+    max-width: unset;
+    margin: 0;
+  }
 }

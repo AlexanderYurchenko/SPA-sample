@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
+import { setPosts } from './js/actions/index'
+import { fetchPosts } from "./js/actions/index";
+import store from "./js/store/index";
+import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";
 import Posts from "./components/posts/posts";
 import PostSingle from "./components/post-single/post-single";
@@ -8,7 +12,18 @@ import Contact from "./components/contact/contact";
 import NotFound from "./components/not-found/not-found";
 import Footer from "./components/footer/footer";
 
-class App extends Component {
+const mapStateToProps = state => {
+  return { post: state.post };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setPosts: post => dispatch(setPosts(post)),
+    fetchPosts: posts => dispatch(fetchPosts())
+  };
+}
+
+class ConnectedApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,19 +34,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let url = "https://raw.githubusercontent.com/AlexanderYurchenko/SPA-sample/master/src/data/posts.json"
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({posts: data.posts});
-      })
-      .then(this.refreshPostsList)
+    // console.log(this.props);
+    store.dispatch(fetchPosts());
   }
 
   refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
 
   render() {
-    const { posts, refreshPostsList, refreshPost } = this.state;
+    console.log(this.props);
+    const { posts, refreshPostsList, refreshPost } = this.props;
 
     return (  
       <React.Fragment>
@@ -60,4 +71,4 @@ class App extends Component {
   }
 }
  
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedApp);

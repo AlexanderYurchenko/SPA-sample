@@ -26,8 +26,8 @@ class FormGroup extends Component {
     });
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({ 
+  static getDerivedStateFromProps(props) {
+    return ({ 
       name: props.name, 
       title: props.title, 
       value: props.value,
@@ -50,7 +50,7 @@ class FormGroup extends Component {
   handleBlur(event) {
     const formGroup = event.target.parentNode;
 
-    if (event.target.value == '' && formGroup.classList.contains('is-focused')) {
+    if (event.target.value === '' && formGroup.classList.contains('is-focused')) {
       formGroup.classList.remove('is-focused');
 
       this.setState({
@@ -60,7 +60,7 @@ class FormGroup extends Component {
   }
 
   renderInputField() {
-    if (this.state.type == 'textarea') {
+    if (this.state.type === 'textarea') {
       return (
         <textarea className="c-field" id={this.state.name} name={this.state.name} value={this.state.value} onBlur={this.handleBlur} onChange={this.props.onChange} onClick={this.handleGroupClick}/>
       )
@@ -72,8 +72,7 @@ class FormGroup extends Component {
   }
 
   render() { 
-    const { name, title, value, focusedState, type } = this.state;
-
+    const { name, title, focusedState } = this.state;
 
     return ( 
       <div className={"c-form-group" + (focusedState ? ' is-focused' : '')}>

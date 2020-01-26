@@ -13,35 +13,39 @@ import NotFound from "./components/not-found/not-found";
 import Footer from "./components/footer/footer";
 
 const mapStateToProps = state => {
-  return { post: state.post };
+  return { 
+    posts: state.posts,
+    refreshPostsList: state.refreshPostsList,
+    refreshPost: state.refreshPost
+  };
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    setPosts: post => dispatch(setPosts(post)),
+    setPosts: posts => dispatch(setPosts(posts)),
     fetchPosts: posts => dispatch(fetchPosts())
   };
 }
 
-class ConnectedApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-      refreshPostsList: false,
-      refreshPost: false
-    };
-  }
+class App extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     posts: [],
+  //     refreshPostsList: false,
+  //     refreshPost: false
+  //   };
+  // }
 
-  componentDidMount() {
-    // console.log(this.props);
-    store.dispatch(fetchPosts());
-  }
+  // componentDidMount() {
+  //   console.log(this.props);
+  //   store.dispatch(setPosts());
+  // }
 
   refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { posts, refreshPostsList, refreshPost } = this.props;
 
     return (  
@@ -71,4 +75,4 @@ class ConnectedApp extends Component {
   }
 }
  
-export default connect(mapStateToProps, mapDispatchToProps)(ConnectedApp);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -31,11 +31,15 @@ class Posts extends Component {
   }
   
   render() {
+    // console.log(this.props);
+    const { posts } = this.state;
+    // const { posts } = this.props;
+
     return (
       <div className="c-posts">
         <h2 className="c-posts__title c-h2">Posts List</h2>
         <ul className="c-posts__list">
-          {this.state.posts.map(post => (
+          {posts && posts.map(post => (
             <Post
               key={post.id}
               post={post}

@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import Post from "../post/post";
+import { connect } from 'react-redux';
 import "./posts.scss"
 
-class Posts extends Component {
-  state = {
-    posts: [],
-    refresh: false
+const mapStateToProps = state => {
+  return { 
+    posts: state.posts,
+    refreshPostsList: state.refreshPostsList,
+    refreshPost: state.refreshPost
   };
+};
+
+class Posts extends Component {
+  // state = {
+  //   posts: [],
+  //   refresh: false
+  // };
 
   // UNSAFE_componentWillReceiveProps(props) {
   //   const { refresh } = this.props;
@@ -15,25 +24,25 @@ class Posts extends Component {
   //   }
   // }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.refresh !== state.refresh) {
-      // this.setState({ posts: props.posts })
-      return ({
-        posts: props.posts
-      })
-    }
+  // static getDerivedStateFromProps(props, state) {
+  //   if (props.refresh !== state.refresh) {
+  //     // this.setState({ posts: props.posts })
+  //     return ({
+  //       posts: props.posts
+  //     })
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 
-  componentDidMount() {
-    this.setState({ posts: this.props.posts })
-  }
+  // componentDidMount() {
+  //   this.setState({ posts: this.props.posts })
+  // }
   
   render() {
     // console.log(this.props);
-    const { posts } = this.state;
-    // const { posts } = this.props;
+    // const { posts } = this.state;
+    const { posts } = this.props;
 
     return (
       <div className="c-posts">
@@ -51,4 +60,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default connect(mapStateToProps)(Posts);

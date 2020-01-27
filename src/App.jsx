@@ -12,13 +12,13 @@ import Contact from "./components/contact/contact";
 import NotFound from "./components/not-found/not-found";
 import Footer from "./components/footer/footer";
 
-const mapStateToProps = state => {
-  return { 
-    posts: state.posts,
-    refreshPostsList: state.refreshPostsList,
-    refreshPost: state.refreshPost
-  };
-};
+// const mapStateToProps = state => {
+//   return { 
+//     posts: state.posts,
+//     refreshPostsList: state.refreshPostsList,
+//     refreshPost: state.refreshPost
+//   };
+// };
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -42,7 +42,7 @@ class App extends Component {
   //   store.dispatch(setPosts());
   // }
 
-  refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
+  // refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
 
   render() {
     // console.log(this.props);
@@ -57,7 +57,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" children={(props) => (
                   props.match
-                    ? <Posts {...props} posts={posts} refresh={refreshPostsList} /> : ''
+                    ? <Posts/> : ''
                 )}/>
                 <Route path="/post/:postId" children={(props) => (
                   props.match
@@ -75,4 +75,4 @@ class App extends Component {
   }
 }
  
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

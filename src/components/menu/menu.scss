@@ -21,8 +21,30 @@
   }
 
   &__center {
+    position: relative;
     z-index: 3;
     transition: all .3s;
+  }
+
+  &__logo {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 79px;
+    padding: 28px 15px;
+    font-size: 26px;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      color: #fff;
+      text-decoration: none
+    }
   }
 
   &__btn {
@@ -142,6 +164,11 @@
       }
     }
 
+    &__logo {
+      height: 59px;
+      padding: 18px 15px;
+    }
+
     &__btn {
       display: block;
     }
@@ -172,7 +199,7 @@
       }
     }
 
-    &__list {
+    &__box {
       display: none;
       position: absolute;
       top: 59px;
@@ -189,6 +216,10 @@
       .open & {
         display: block;
       }
+    }
+
+    &__list {
+
     }
 
     &__item {
@@ -232,8 +263,7 @@
 
   @include respond-from(sm) {
     &__list {
-      margin: 21px 0 0 200px;
-      text-align: right;
+      margin: 23px 0 0 200px;
     }
   }
 }

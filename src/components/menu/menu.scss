@@ -47,6 +47,8 @@
     }
   }
 
+  
+
   &__btn {
     display: none;
     width: 33px;
@@ -262,8 +264,26 @@
   }
 
   @include respond-from(sm) {
+    &__center {
+      height: 100%;
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      margin-left: 200px;
+    }
+
     &__list {
-      margin: 23px 0 0 200px;
+      // margin: 23px 0 0 200px;
+    }
+
+    &__actions {
+      .c-btn {
+        margin-right: 20px;
+      }
     }
   }
 }

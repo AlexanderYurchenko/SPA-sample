@@ -7,6 +7,7 @@ import store from "./js/store/index";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";
 import Posts from "./components/posts/posts";
+import Notifications from "./components/notifications/notifications"
 import PostSingle from "./components/post-single/post-single";
 import Contact from "./components/contact/contact";
 import NotFound from "./components/not-found/not-found";
@@ -57,7 +58,10 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" children={(props) => (
                   props.match
-                    ? <Posts/> : ''
+                    ? <div className="w-cols">
+                        <Posts/>
+                        <Notifications/>
+                      </div> : ''
                 )}/>
                 <Route path="/post/:postId" children={(props) => (
                   props.match

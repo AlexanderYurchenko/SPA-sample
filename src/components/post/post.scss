@@ -37,10 +37,20 @@
     line-height: 152%;
   }
 
-  &__date {
+  &__footer {
+    display: flex;
+    justify-content: space-between;
     margin: 17px 0 0;
     font-size: 14px;
     font-weight: $font-main-medium;
+  }
+
+  &__author {
+    margin-right: 20px;
+  }
+
+  &__date {
+    white-space: nowrap;
   }
 
   @include respond-from(sm) {

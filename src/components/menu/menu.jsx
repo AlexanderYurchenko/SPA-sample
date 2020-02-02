@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './menu.scss';
+import SignedInLinks from './signed-in-links'
+import SignedOutLinks from './signed-out-links'
 
 class Menu extends Component {
   state = {
@@ -45,7 +47,7 @@ class Menu extends Component {
               <span className="c-menu__line c-menu__line-2"></span>
               <span className="c-menu__line c-menu__line-3"></span>
             </button>
-            <div className="c-menu__box">
+            <nav className="c-menu__box">
               <ul className="c-menu__list">
                 <li className="c-menu__item">
                   <NavLink className="c-menu__link" exact to="/" activeClassName="active" onClick={this.closeMenu}>Posts</NavLink>
@@ -55,9 +57,11 @@ class Menu extends Component {
                 </li>
               </ul>
               <div className="c-menu__actions">
-
+                <SignedOutLinks/>
+                <SignedInLinks/>
+                
               </div>
-            </div>
+            </nav>
           </div>
         </div>
       </div>

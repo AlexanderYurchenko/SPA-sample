@@ -31,7 +31,9 @@ class PostSingle extends Component {
         </div>
         <div className="c-post-single__text">{info}</div>
         <div className="c-post-single__footer">
-          <div className="c-post-single__author">{author}</div>
+          <div className="c-post-single__author-box">Posted by 
+            <div className="c-post-single__author">{author}</div>
+          </div>
           <span className="c-post-single__date">{date}</span>
         </div>
       </div>

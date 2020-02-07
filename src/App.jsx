@@ -12,6 +12,8 @@ import PostSingle from "./components/post-single/post-single";
 import Contact from "./components/contact/contact";
 import NotFound from "./components/not-found/not-found";
 import Footer from "./components/footer/footer";
+import SignIn from "./components/auth/sign-in";
+import SignUp from "./components/auth/sign-up";
 
 // const mapStateToProps = state => {
 //   return { 
@@ -68,6 +70,8 @@ class App extends Component {
                     ? <PostSingle {...props} refresh={refreshPost}/> : ''
                 )}/>
                 <Route path="/contact" component={Contact} />
+                <Route path="/signin" component={SignIn} />
+                <Route path="/signup" component={SignUp} />
                 <Route component={NotFound} />
               </Switch>
             </div>

@@ -1,6 +1,10 @@
 @import '../../common.scss';
 
-.c-contact {
+.c-auth {
+  &__form {
+    margin: 10px 0 0;
+  }
+
   &__grid {
     margin: 0 auto;
     max-width: 768px;
@@ -17,12 +21,6 @@
       row-gap: 0;
       column-gap: 15px;
       grid-template-columns: repeat(2, 1fr);
-
-      .c-form-group {
-        &:nth-child(3) {
-          grid-column: 1 / 3;
-        }
-      }
     }
   }
 }

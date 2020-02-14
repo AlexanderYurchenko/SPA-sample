@@ -14,6 +14,7 @@ import NotFound from "./components/not-found/not-found";
 import Footer from "./components/footer/footer";
 import SignIn from "./components/auth/sign-in";
 import SignUp from "./components/auth/sign-up";
+import CreatePost from "./components/post-create/post-create";
 
 // const mapStateToProps = state => {
 //   return { 
@@ -72,6 +73,7 @@ class App extends Component {
                 <Route path="/contact" component={Contact} />
                 <Route path="/signin" component={SignIn} />
                 <Route path="/signup" component={SignUp} />
+                <Route path="/create" component={CreatePost} />
                 <Route component={NotFound} />
               </Switch>
             </div>

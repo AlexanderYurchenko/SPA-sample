@@ -1,0 +1,17 @@
+@import '../../common.scss';
+
+.c-create-post {
+  &__form {
+    margin: 10px 0 0;
+  }
+
+  &__grid {
+    margin: 0 auto;
+    max-width: 768px;
+  }
+
+  &__btn-box {
+    margin: 5px auto 0;
+    text-align: center;
+  }
+}

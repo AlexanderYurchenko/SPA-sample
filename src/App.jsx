@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import { connect } from 'react-redux';
 import { setPosts } from './js/actions/index'
-import { fetchPosts } from "./js/actions/index";
+import { fetchPosts } from "./js/actions/postActions";
 import store from "./js/store/index";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";

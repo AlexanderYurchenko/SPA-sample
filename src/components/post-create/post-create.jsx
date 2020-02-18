@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import FormGroup from "../form-group/form-group";
 import './post-create.scss';
+import { connect } from 'react-redux';
+import { createPost } from '../../js/actions/postActions';
 
 class CreatePost extends Component {
   state = { 
+    id: '',
+    author: '',
+    date: '',
     title: '',
-    content: ''
+    text: ''
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     // this.props.history.push('/')
+    this.props.createPost(this.state)
   }
 
   handleChange = (event) => {
@@ -31,7 +37,7 @@ class CreatePost extends Component {
               type="text"
               onChange={this.handleChange}/>
             <FormGroup 
-              name="content" 
+              name="text" 
               title="Post content" 
               type="textarea"
               onChange={this.handleChange}/>
@@ -44,5 +50,11 @@ class CreatePost extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createPost: (post) => dispatch(createPost(post))
+  }
+}
  
-export default CreatePost;
+export default connect(null, mapDispatchToProps)(CreatePost);

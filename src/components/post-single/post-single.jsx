@@ -22,14 +22,14 @@ class PostSingle extends Component {
   // }
 
   render() {
-    const { title, info, author, date } = this.props.post;
+    const { title, text, author, date } = this.props.post;
 
     return (
       <div className="c-post-single">
         <div className="c-post-single__title-box">
           <div className="c-post-single__title c-h1">{title}</div>
         </div>
-        <div className="c-post-single__text">{info}</div>
+        <div className="c-post-single__text">{text}</div>
         <div className="c-post-single__footer">
           <div className="c-post-single__author-box">Posted by 
             <div className="c-post-single__author">{author}</div>

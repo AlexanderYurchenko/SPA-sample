@@ -5,9 +5,9 @@ import "./posts.scss"
 
 const mapStateToProps = state => {
   return { 
-    posts: state.posts,
-    refreshPostsList: state.refreshPostsList,
-    refreshPost: state.refreshPost
+    posts: state.post.posts,
+    // refreshPostsList: state.refreshPostsList,
+    // refreshPost: state.refreshPost
   };
 };
 

@@ -5,23 +5,15 @@ import { SET_POSTS, CREATE_POST, CREATE_POST_ERROR } from "../constants/action-t
 // };
 
 export const createPost = (post) => {
-  return (dispatch, getState) => {
-    // let url = "https://raw.githubusercontent.com/AlexanderYurchenko/SPA-sample/redux-try/src/data/posts.json?access_token=f12485d3313138d41a513ce17284bb08c8b0df35"
-    let url = "api.github.com/AlexanderYurchenko/SPA-sample/redux-try/src/data/posts.json?access_token=f12485d3313138d41a513ce17284bb08c8b0df35"
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: 'test id',
-        title: 'test title',
-        info: 'test info',
-        date: new Date()
-      })
-    })
-    .then(() => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore.collection('posts').add({
+      ...post,
+      authorFirstName: 'Ben',
+      authorLastName: 'Cumber',
+      authorId: 12345,
+      createdAt: new Date()
+    }).then(() => {
       console.log('dispatch');
       dispatch({ 
         type: CREATE_POST, 
@@ -30,7 +22,7 @@ export const createPost = (post) => {
     }).catch((error) => {
       console.log('error');
       dispatch({
-        type: 'CREATE_POST_ERROR',
+        type: CREATE_POST_ERROR,
         error
       })
     })

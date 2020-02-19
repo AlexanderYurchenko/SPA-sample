@@ -8,6 +8,15 @@ npm install -g create-react-app
 **Install SASS compiler**
 npm install node-sass
 
+**Install Redux**
+npm install redux react-redux
+
+**Install Thunk for middleware**
+npm install redux-thunk
+
+**Install Firebase and some packages for it**
+npm install firebase react-redux-firebase redux-firestore
+
 create-react-app folder
 
 cd folder/

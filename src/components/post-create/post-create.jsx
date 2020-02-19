@@ -7,7 +7,8 @@ import { createPost } from '../../js/actions/postActions';
 class CreatePost extends Component {
   state = { 
     id: '',
-    author: '',
+    authorFirstName: '',
+    authorLastName: '',
     date: '',
     title: '',
     text: ''

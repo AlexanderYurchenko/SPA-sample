@@ -3,6 +3,8 @@ import './App.scss';
 import { connect } from 'react-redux';
 import { setPosts } from './js/actions/index'
 import { fetchPosts } from "./js/actions/postActions";
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 import store from "./js/store/index";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";
@@ -17,8 +19,9 @@ import SignUp from "./components/auth/sign-up";
 import CreatePost from "./components/post-create/post-create";
 
 // const mapStateToProps = state => {
+//   console.log(state);
 //   return { 
-//     posts: state.posts,
+//     posts: state.firestore.ordered.posts,
 //     refreshPostsList: state.refreshPostsList,
 //     refreshPost: state.refreshPost
 //   };
@@ -85,4 +88,9 @@ class App extends Component {
   }
 }
  
-export default connect(null, mapDispatchToProps)(App);
+export default compose(
+  connect(null, mapDispatchToProps),
+  firestoreConnect(['posts'])
+)(App);
+
+// export default connect(null, mapDispatchToProps)(App);

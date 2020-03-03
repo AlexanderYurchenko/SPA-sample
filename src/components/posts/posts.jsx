@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Post from "../post/post";
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 import "./posts.scss"
 
 const mapStateToProps = state => {
+  console.log(state);
   return { 
-    posts: state.post.posts,
+    posts: state.firestore.ordered.posts || state.post.posts,
     // refreshPostsList: state.refreshPostsList,
     // refreshPost: state.refreshPost
   };
@@ -43,6 +46,7 @@ class Posts extends Component {
     // console.log(this.props);
     // const { posts } = this.state;
     const { posts } = this.props;
+    console.log(posts);
 
     return (
       <div className="c-posts">
@@ -60,4 +64,11 @@ class Posts extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Posts);
+// export default connect(mapStateToProps)(Posts);
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'posts'}
+  ])
+)(Posts);

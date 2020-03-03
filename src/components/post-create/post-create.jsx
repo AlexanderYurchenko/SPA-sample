@@ -9,7 +9,7 @@ class CreatePost extends Component {
     id: '',
     authorFirstName: '',
     authorLastName: '',
-    date: '',
+    createdAt: '',
     title: '',
     text: ''
   }

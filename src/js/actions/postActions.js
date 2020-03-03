@@ -1,4 +1,5 @@
 import { SET_POSTS, CREATE_POST, CREATE_POST_ERROR } from "../constants/action-types";
+// import { getFirestore } from 'redux-firestore';
 
 // export function setPosts(payload) {
 //   return { type: SET_POSTS, payload }

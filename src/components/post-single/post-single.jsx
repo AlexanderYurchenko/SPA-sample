@@ -63,7 +63,7 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect(props => [
     { collection: 'posts',
-      // doc: props.match.params.postId
+      doc: props.match.params.postId,
     }
   ])
 )(PostSingle);

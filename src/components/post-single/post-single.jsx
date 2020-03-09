@@ -29,20 +29,26 @@ class PostSingle extends Component {
     const { title, text, authorFirstName, authorLastName, createdAt } = this.props.post || '';
     const date = createdAt ? new Date(createdAt.seconds * 1000).toLocaleDateString() : '';
 
-    return (
-      <div className="c-post-single">
-        <div className="c-post-single__title-box">
-          <div className="c-post-single__title c-h1">{title}</div>
-        </div>
-        <div className="c-post-single__text">{text}</div>
-        <div className="c-post-single__footer">
-          <div className="c-post-single__author-box">Posted by 
-            <div className="c-post-single__author">{authorFirstName} {authorLastName}</div>
+    if (this.props.post) {
+      return (
+        <div className="c-post-single">
+          <div className="c-post-single__title-box">
+            <div className="c-post-single__title c-h1">{title}</div>
           </div>
-          <span className="c-post-single__date">{date}</span>
+          <div className="c-post-single__text">{text}</div>
+          <div className="c-post-single__footer">
+            <div className="c-post-single__author-box">Posted by 
+              <div className="c-post-single__author">{authorFirstName} {authorLastName}</div>
+            </div>
+            <span className="c-post-single__date">{date}</span>
+          </div>
         </div>
-      </div>
-    );
+      )
+    } else {
+      return (
+        <div>Loading...</div>
+      )
+    }
   }
 }
 
@@ -63,7 +69,7 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect(props => [
     { collection: 'posts',
-      doc: props.match.params.postId,
+      // doc: props.match.params.postId,
     }
   ])
 )(PostSingle);

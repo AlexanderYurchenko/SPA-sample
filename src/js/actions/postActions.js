@@ -7,7 +7,8 @@ import { SET_POSTS, CREATE_POST, CREATE_POST_ERROR } from "../constants/action-t
 
 export const createPost = (post) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    const firestore = getFirestore();
+    // const firestore = getFirestore();
+    const firestore = getFirebase().firestore();
     firestore.collection('posts').add({
       ...post,
       authorFirstName: 'Ben',

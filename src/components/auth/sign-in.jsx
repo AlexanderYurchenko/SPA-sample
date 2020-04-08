@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import FormGroup from "../form-group/form-group";
 import './auth.scss';
+import { connect } from 'react-redux';
+import { signIn } from '../../js/actions/authActions'
 
 class SignIn extends Component {
   state = { 
@@ -10,7 +12,7 @@ class SignIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // this.props.history.push('/')
+    this.props.signIn(this.state, this.props.history);
   }
 
   handleChange = (event) => {
@@ -20,6 +22,8 @@ class SignIn extends Component {
   }
 
   render() { 
+    const { authError } = this.props;
+
     return (  
       <div className="c-auth">
         <form onSubmit={this.handleSubmit} className="c-auth__form">
@@ -39,10 +43,23 @@ class SignIn extends Component {
           <div className="c-auth__btn-box">
             <button className="c-btn" type="submit">Login</button>
           </div>
+          { authError ? <div className="c-auth__error">{authError}</div> : '' }
         </form>
       </div>    
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds, history) => dispatch(signIn(creds, history))
+  }
+}
  
-export default SignIn;
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './menu.scss';
-import SignedInLinks from './signed-in-links'
-import SignedOutLinks from './signed-out-links'
+import SignedInLinks from './signed-in-links';
+import SignedOutLinks from './signed-out-links';
+import { connect } from 'react-redux';
 
 class Menu extends Component {
   state = {
@@ -37,7 +38,9 @@ class Menu extends Component {
   }
 
   render() { 
-    return (  
+    const { auth } = this.props;
+    const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />
+    return ( 
       <div className="c-menu">
         <div className="c-menu__fix">
           <div className="w-center c-menu__center js-menu-wrap">
@@ -57,9 +60,7 @@ class Menu extends Component {
                 </li>
               </ul>
               <div className="c-menu__actions">
-                <SignedOutLinks/>
-                <SignedInLinks/>
-                
+                { links }
               </div>
             </nav>
           </div>
@@ -68,5 +69,11 @@ class Menu extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
  
-export default Menu;
+export default connect(mapStateToProps)(Menu);

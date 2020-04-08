@@ -25,7 +25,6 @@ class PostSingle extends Component {
   // }
 
   render() {
-    console.log(this.props);
     const { title, text, authorFirstName, authorLastName, createdAt } = this.props.post || '';
     const date = createdAt ? new Date(createdAt.seconds * 1000).toLocaleDateString() : '';
 
@@ -55,9 +54,7 @@ class PostSingle extends Component {
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.postId;
   const posts = state.firestore.data.posts;
-  console.log(state);
   const post = posts ? posts[id] : null;
-  console.log(ownProps);
 
   return {
     post: post

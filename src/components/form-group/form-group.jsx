@@ -14,13 +14,15 @@ class FormGroup extends Component {
     this.handleGroupClick = this.handleGroupClick.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.renderInputField = this.renderInputField.bind(this);
+    this.handleMountCheck = this.handleMountCheck.bind(this);
   }
 
   componentDidMount() {
+    this.handleMountCheck(this.inputElement);
     this.setState({ 
       name: this.props.name, 
       title: this.props.title, 
-      value: this.props.value,
+      // value: this.props.value,
       type: this.props.type,
       focusedState : ( this.props.value ? true : false) 
     });
@@ -34,7 +36,16 @@ class FormGroup extends Component {
     });
   }
 
+  // TODO
+  handleMountCheck(input) {
+    console.log('handleMountCheck');
+    const formGroup = input.parentNode;
+    // console.log(input.value);
+  }
+  // TODO END
+
   handleGroupClick(event) {
+    console.log('handle click');
     const formGroup = event.target.parentNode;
 
     if (!formGroup.classList.contains('is-focused')) {
@@ -62,11 +73,11 @@ class FormGroup extends Component {
   renderInputField() {
     if (this.state.type === 'textarea') {
       return (
-        <textarea className="c-field" id={this.state.name} name={this.state.name} value={this.state.value} onBlur={this.handleBlur} onChange={this.props.onChange} onClick={this.handleGroupClick}/>
+        <textarea ref={input => this.inputElement = input} className="c-field" id={this.state.name} name={this.state.name} value={this.state.value} onBlur={this.handleBlur} onChange={this.props.onChange} onClick={this.handleGroupClick}/>
       )
     } else {
       return (
-        <input type={this.state.type ? this.state.type : 'text'} className="c-field" id={this.state.name} name={this.state.name} value={this.state.value} onBlur={this.handleBlur} onChange={this.props.onChange}/>
+        <input ref={input => this.inputElement = input} type={this.state.type ? this.state.type : 'text'} className="c-field" id={this.state.name} name={this.state.name} value={this.state.value} onBlur={this.handleBlur} onChange={this.props.onChange}/>
       )
     }
   }

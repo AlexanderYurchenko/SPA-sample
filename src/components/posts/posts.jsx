@@ -6,7 +6,6 @@ import { compose } from 'redux';
 import "./posts.scss"
 
 const mapStateToProps = state => {
-  console.log(state);
   return { 
     posts: state.firestore.ordered.posts || state.post.posts,
     // refreshPostsList: state.refreshPostsList,
@@ -46,7 +45,6 @@ class Posts extends Component {
     // console.log(this.props);
     // const { posts } = this.state;
     const { posts } = this.props;
-    console.log(posts);
 
     return (
       <div className="c-posts">

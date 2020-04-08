@@ -1,14 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOut } from '../../js/actions/authActions';
 
-const SignedInLinks = () => {
+const SignedInLinks = (props) => {
+  let history = useHistory();
   return (
     <React.Fragment>
       <NavLink to='/create' className="c-btn">Add Post</NavLink>
-      <NavLink to='/' className="c-btn">Log Out</NavLink>
+      <a onClick={() => {props.signOut(history)}} href="#" className="c-btn">Log Out</a>
       <NavLink to='/' className="c-user-icon">NN</NavLink>
     </React.Fragment>
   )
 }
 
-export default SignedInLinks
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: (history) => dispatch(signOut(history))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignedInLinks)

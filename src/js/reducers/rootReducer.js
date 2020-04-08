@@ -4,6 +4,7 @@ import authReducer from './authReducer';
 import postReducer from './postReducer';
 import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
+import { firebaseReducer } from 'react-redux-firebase';
 
 // const initState = {
 //   posts: [
@@ -35,7 +36,8 @@ import { firestoreReducer } from 'redux-firestore';
 const rootReducer = combineReducers({
   auth: authReducer,
   post: postReducer,
-  firestore: firestoreReducer
+  firestore: firestoreReducer,
+  firebase: firebaseReducer
 });
 
 export default rootReducer;

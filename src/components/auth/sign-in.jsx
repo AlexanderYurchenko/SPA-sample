@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../js/actions/authActions'
 
 class SignIn extends Component {
-  state = { 
+  state = {
     email: '',
     password: ''
   }
@@ -17,26 +17,26 @@ class SignIn extends Component {
 
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value 
+      [event.target.id]: event.target.value
     })
   }
 
-  render() { 
+  render() {
     const { authError } = this.props;
 
-    return (  
+    return (
       <div className="c-auth">
         <form onSubmit={this.handleSubmit} className="c-auth__form">
           <div className="c-auth__title">Sign In</div>
           <div className="c-auth__grid">
-            <FormGroup 
-              name="email" 
-              title="E-mail" 
+            <FormGroup
+              name="email"
+              title="E-mail"
               type="mail"
               onChange={this.handleChange}/>
-            <FormGroup 
-              name="password" 
-              title="Password" 
+            <FormGroup
+              name="password"
+              title="Password"
               type="password"
               onChange={this.handleChange}/>
           </div>
@@ -45,7 +45,7 @@ class SignIn extends Component {
           </div>
           { authError ? <div className="c-auth__error">{authError}</div> : '' }
         </form>
-      </div>    
+      </div>
     );
   }
 }
@@ -61,5 +61,5 @@ const mapDispatchToProps = (dispatch) => {
     signIn: (creds, history) => dispatch(signIn(creds, history))
   }
 }
- 
+
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

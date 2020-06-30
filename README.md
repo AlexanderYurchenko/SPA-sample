@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+App that fetches posts in jsons from repo, has users to login.<br/>
+Test user data:<br/>
+Login: test@iua.ua<br/>
+Password: test1234<br/>
+
 ## To run project
 
 **Install create-react-app:**

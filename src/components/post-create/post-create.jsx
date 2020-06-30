@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createPost } from '../../js/actions/postActions';
 
 class CreatePost extends Component {
-  state = { 
+  state = {
     authorFirstName: '',
     authorLastName: '',
     createdAt: '',
@@ -21,24 +21,24 @@ class CreatePost extends Component {
 
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value 
+      [event.target.id]: event.target.value
     })
   }
 
-  render() { 
-    return (  
+  render() {
+    return (
       <div className="c-create-post">
         <form onSubmit={this.handleSubmit} className="c-create-post__form">
           <div className="c-create-post__title">Post create</div>
           <div className="c-create-post__grid">
-            <FormGroup 
-              name="title" 
-              title="Title" 
+            <FormGroup
+              name="title"
+              title="Title"
               type="text"
               onChange={this.handleChange}/>
-            <FormGroup 
-              name="text" 
-              title="Post content" 
+            <FormGroup
+              name="text"
+              title="Post content"
               type="textarea"
               onChange={this.handleChange}/>
           </div>
@@ -46,7 +46,7 @@ class CreatePost extends Component {
             <button className="c-btn" type="submit">Create</button>
           </div>
         </form>
-      </div>    
+      </div>
     );
   }
 }
@@ -56,5 +56,5 @@ const mapDispatchToProps = (dispatch) => {
     createPost: (post) => dispatch(createPost(post))
   }
 }
- 
+
 export default connect(null, mapDispatchToProps)(CreatePost);

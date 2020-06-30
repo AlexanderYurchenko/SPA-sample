@@ -15,7 +15,7 @@ const Post = ( props ) => {
         <div className="c-post__author">by {authorFirstName} {authorLastName}</div>
         <div className="c-post__date">{date}</div>
       </div>
-      
+
       <Route path="/post/:postId"  children={(props) => (
         props.match
           ? <PostSingle {...props}/> : ''

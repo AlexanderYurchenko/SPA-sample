@@ -6,7 +6,7 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '', 
+      name: '',
       email: '',
       message: ''
     };
@@ -25,25 +25,25 @@ class Contact extends Component {
     this.props.history.push('/')
   }
 
-  render() { 
+  render() {
     const { name, email, message } = this.state;
     return (
       <form className="c-contact">
         <div className="c-contact__grid">
-          <FormGroup 
-            name="name" 
-            title="Name" 
+          <FormGroup
+            name="name"
+            title="Name"
             value={name}
             onChange={this.handleChangeInput}/>
-          <FormGroup 
-            name="email" 
-            title="E-mail" 
+          <FormGroup
+            name="email"
+            title="E-mail"
             value={email}
             type="mail"
             onChange={this.handleChangeInput}/>
-          <FormGroup 
-            name="message" 
-            title="Message" 
+          <FormGroup
+            name="message"
+            title="Message"
             value={message}
             type="textarea"
             onChange={this.handleChangeInput}/>
@@ -55,5 +55,5 @@ class Contact extends Component {
     )
   }
 }
- 
+
 export default Contact;

@@ -36,7 +36,7 @@ const postReducer = (state = initState, action) => {
       return state;
     case SET_POSTS:
       console.log('set posts', action);
-    default: 
+    default:
       return state;
   }
 };

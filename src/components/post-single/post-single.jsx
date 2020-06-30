@@ -6,24 +6,6 @@ import { compose } from 'redux';
 import "./post-single.scss";
 
 class PostSingle extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     post: [],
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   const postRegExp = new RegExp("([^\/]+$)")
-  //   const postId = postRegExp.exec(this.props.match.url)
-  //   let url = "https://raw.githubusercontent.com/AlexanderYurchenko/SPA-sample/master/src/data/post" + postId[1] + ".json"
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({post: data.post});
-  //     })
-  // }
-
   render() {
     const { title, text, authorFirstName, authorLastName, createdAt } = this.props.post || '';
     const date = createdAt ? new Date(createdAt.seconds * 1000).toLocaleDateString() : '';
@@ -36,7 +18,7 @@ class PostSingle extends Component {
           </div>
           <div className="c-post-single__text">{text}</div>
           <div className="c-post-single__footer">
-            <div className="c-post-single__author-box">Posted by 
+            <div className="c-post-single__author-box">Posted by&#32;
               <div className="c-post-single__author">{authorFirstName} {authorLastName}</div>
             </div>
             <span className="c-post-single__date">{date}</span>

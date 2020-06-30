@@ -1,10 +1,6 @@
 @import '../../common.scss';
 
 .c-posts {
-  &__title {
-
-  }
-
   &__list {
     @extend %ul-reset-style;
   }

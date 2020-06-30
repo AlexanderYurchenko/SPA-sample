@@ -37,10 +37,10 @@ class Menu extends Component {
     });
   }
 
-  render() { 
+  render() {
     const { auth } = this.props;
     const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />
-    return ( 
+    return (
       <div className="c-menu">
         <div className="c-menu__fix">
           <div className="w-center c-menu__center js-menu-wrap">
@@ -75,5 +75,5 @@ const mapStateToProps = (state) => {
     auth: state.firebase.auth
   }
 }
- 
+
 export default connect(mapStateToProps)(Menu);

@@ -5,7 +5,6 @@ import { setPosts } from './js/actions/index'
 import { fetchPosts } from "./js/actions/postActions";
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import store from "./js/store/index";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";
 import Posts from "./components/posts/posts";
@@ -18,15 +17,6 @@ import SignIn from "./components/auth/sign-in";
 import SignUp from "./components/auth/sign-up";
 import CreatePost from "./components/post-create/post-create";
 
-// const mapStateToProps = state => {
-//   console.log(state);
-//   return { 
-//     posts: state.firestore.ordered.posts,
-//     refreshPostsList: state.refreshPostsList,
-//     refreshPost: state.refreshPost
-//   };
-// };
-
 function mapDispatchToProps(dispatch) {
   return {
     setPosts: posts => dispatch(setPosts(posts)),
@@ -35,27 +25,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     posts: [],
-  //     refreshPostsList: false,
-  //     refreshPost: false
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   console.log(this.props);
-  //   store.dispatch(setPosts());
-  // }
-
-  // refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
-
   render() {
-    // console.log(this.props);
-    const { posts, refreshPostsList, refreshPost } = this.props;
+    const { refreshPost } = this.props;
 
-    return (  
+    return (
       <React.Fragment>
         <div className="w-inner">
           <Menu />
@@ -87,10 +60,8 @@ class App extends Component {
     );
   }
 }
- 
+
 export default compose(
   connect(null, mapDispatchToProps),
   firestoreConnect(['posts'])
 )(App);
-
-// export default connect(null, mapDispatchToProps)(App);

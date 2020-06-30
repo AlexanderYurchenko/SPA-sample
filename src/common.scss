@@ -62,7 +62,7 @@ $bd-fill: #c3cce7;
       @media only screen and (min-width: $fifth-point) {
           @content;
       }
-  } 
+  }
 }
 
 %ul-reset-style {

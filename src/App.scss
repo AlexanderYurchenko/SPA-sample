@@ -118,7 +118,7 @@ body {
   @include respond-from(sm) {
     font-size: 22px;
   }
-  
+
   @include respond-from(md) {
     font-size: 24px;
   }
@@ -130,7 +130,7 @@ body {
   @include respond-from(sm) {
     font-size: 20px;
   }
-  
+
   @include respond-from(md) {
     font-size: 20px;
   }
@@ -142,7 +142,7 @@ body {
   @include respond-from(sm) {
     font-size: 16px;
   }
-  
+
   @include respond-from(md) {
     font-size: 18px;
   }
@@ -211,7 +211,7 @@ a {
       transform: scaleY(1);
       transition-timing-function: cubic-bezier(.52, 1.64, .37, .66);
     }
-  } 
+  }
 }
 
 .c-form-group {

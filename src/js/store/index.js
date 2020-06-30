@@ -5,7 +5,7 @@ import firebase from 'firebase/app';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { getFirebase } from 'react-redux-firebase';
 
-const store = createStore(rootReducer, 
+const store = createStore(rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase })),
     reduxFirestore(firebase)

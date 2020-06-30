@@ -6,7 +6,7 @@ class FormGroup extends Component {
     this.state = {
       name: '',
       title: '',
-      value: '', 
+      value: '',
       type: '',
       focusedState: ''
     };
@@ -19,33 +19,30 @@ class FormGroup extends Component {
 
   componentDidMount() {
     this.handleMountCheck(this.inputElement);
-    this.setState({ 
-      name: this.props.name, 
-      title: this.props.title, 
+    this.setState({
+      name: this.props.name,
+      title: this.props.title,
       // value: this.props.value,
       type: this.props.type,
-      focusedState : ( this.props.value ? true : false) 
+      focusedState : ( this.props.value ? true : false)
     });
   }
 
   static getDerivedStateFromProps(props) {
-    return ({ 
-      name: props.name, 
-      title: props.title, 
+    return ({
+      name: props.name,
+      title: props.title,
       value: props.value,
     });
   }
 
   // TODO
   handleMountCheck(input) {
-    console.log('handleMountCheck');
     const formGroup = input.parentNode;
-    // console.log(input.value);
   }
   // TODO END
 
   handleGroupClick(event) {
-    console.log('handle click');
     const formGroup = event.target.parentNode;
 
     if (!formGroup.classList.contains('is-focused')) {
@@ -67,7 +64,7 @@ class FormGroup extends Component {
       this.setState({
         focusedState: false
       })
-    } 
+    }
   }
 
   renderInputField() {
@@ -82,10 +79,10 @@ class FormGroup extends Component {
     }
   }
 
-  render() { 
+  render() {
     const { name, title, focusedState } = this.state;
 
-    return ( 
+    return (
       <div className={"c-form-group" + (focusedState ? ' is-focused' : '')}>
         <label className="c-form-group__title" htmlFor={name} onClick={this.handleGroupClick}>{title}</label>
         {this.renderInputField()}
@@ -93,5 +90,5 @@ class FormGroup extends Component {
     );
   }
 }
- 
+
 export default FormGroup;

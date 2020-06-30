@@ -47,8 +47,6 @@
     }
   }
 
-  
-
   &__btn {
     display: none;
     width: 33px;
@@ -180,8 +178,8 @@
         width: 33px;
         height: 33px;
         margin: 0 auto;
-        transition: all .3s .1s;  
-        background-color: #d7aa0e;   
+        transition: all .3s .1s;
+        background-color: #d7aa0e;
       }
     }
 
@@ -274,10 +272,6 @@
       align-items: center;
       height: 100%;
       margin-left: 200px;
-    }
-
-    &__list {
-      // margin: 23px 0 0 200px;
     }
 
     &__actions {

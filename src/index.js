@@ -24,7 +24,7 @@ ReactDOM.render(
         <App/>
       </Router>
     </ReactReduxFirebaseProvider>
-  </Provider>, 
+  </Provider>,
   document.getElementById('root')
 );
 

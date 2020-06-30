@@ -12,7 +12,6 @@ export function fetchPosts() {
       .then(data => {
         // this.setState({posts: data.posts});
         dispatch(setPosts(data.posts));
-        console.log(data.posts);
       })
       // .then(this.refreshPostsList)
   };

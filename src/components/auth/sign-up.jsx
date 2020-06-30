@@ -3,7 +3,7 @@ import FormGroup from "../form-group/form-group";
 import './auth.scss';
 
 class SignUp extends Component {
-  state = { 
+  state = {
     email: '',
     password: '',
     firstName: '',
@@ -17,34 +17,34 @@ class SignUp extends Component {
 
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value 
+      [event.target.id]: event.target.value
     })
   }
 
-  render() { 
-    return (  
+  render() {
+    return (
       <div className="c-auth">
         <form onSubmit={this.handleSubmit} className="c-auth__form">
           <div className="c-auth__title">Sign Up</div>
           <div className="c-auth__grid">
-            <FormGroup 
-              name="firstName" 
-              title="First Name" 
+            <FormGroup
+              name="firstName"
+              title="First Name"
               type="text"
               onChange={this.handleChange}/>
-            <FormGroup 
-              name="lastName" 
-              title="Last Name" 
+            <FormGroup
+              name="lastName"
+              title="Last Name"
               type="text"
               onChange={this.handleChange}/>
-            <FormGroup 
-              name="email" 
-              title="E-mail" 
+            <FormGroup
+              name="email"
+              title="E-mail"
               type="mail"
               onChange={this.handleChange}/>
-            <FormGroup 
-              name="password" 
-              title="Password" 
+            <FormGroup
+              name="password"
+              title="Password"
               type="password"
               onChange={this.handleChange}/>
           </div>
@@ -52,9 +52,9 @@ class SignUp extends Component {
             <button className="c-btn" type="submit">Sign up</button>
           </div>
         </form>
-      </div>    
+      </div>
     );
   }
 }
- 
+
 export default SignUp;

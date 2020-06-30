@@ -36,10 +36,6 @@
     margin: 20px 0 0;
   }
 
-  &__btn {
-
-  }
-
   @include respond-from(xs) {
     &:before {
       font-size: 220px;
